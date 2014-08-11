@@ -4,7 +4,7 @@
   "id": "jid1-hto47hFP5UfU6Q",
   "description": "Allow you to click on any phonenumber contained in a web page to launch a call using your Voxity telephony system.",
   "author": "Maël Lavault",
-  "license": "MPL 2.0",
+  "license": "GPLv3",
   "version": "1.0",
   "preferences": [{
       "name": "clientID",
