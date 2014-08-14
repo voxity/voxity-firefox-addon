@@ -5,33 +5,14 @@
   "description": "Allow you to click on any phonenumber contained in a web page to launch a call using your Voxity telephony system.",
   "author": "Maël Lavault",
   "license": "GPLv3",
-  "version": "1.0",
-  "preferences": [{
-      "name": "clientID",
-      "title": "Client ID",
-      "description": "Your client_id found in your profile in client.voxity.fr",
-      "type": "string",
-      "value": ""
-    },
-    {
-      "name": "clientSecret",
-      "title": "Client Secret",
-      "description": "Your client_id found in your profile in client.voxity.fr",
-      "type": "string",
-      "value": ""
-    },
+  "version": "1.1",
+  "preferences": [
     {
       "name": "token",
       "title": "token",
       "type": "string",
       "value": "",
       "hidden": true
-    },
-    {
-	    "type": "control",
-	    "label": "Apply",
-	    "name": "confirmCredentials",
-	    "title": ""
-		}
+    }
 	]
 }
