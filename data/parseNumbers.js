@@ -34,7 +34,7 @@ function replaceInElement(element, find, replace) {
     var child = element.childNodes[i];
     if (child.nodeType == 1) { // ELEMENT_NODE
       var tag = child.nodeName.toLowerCase();
-      if (tag != 'style' && tag !='script'){ // special case, don't touch CDATA elements
+      if (tag !== 'style' && tag !== 'script' && tag !== 'textarea'){ // special case, don't touch CDATA elements
         replaceInElement(child, find, replace);
       }
     } else if (child.nodeType == 3) { // TEXT_NODE
@@ -44,12 +44,7 @@ function replaceInElement(element, find, replace) {
 }
 function replaceInText(text, find, replace) {
   var match;
-  var matches = [];
   while (match = find.exec(text.data)) {
-    matches.push(match);
-  }
-  for (var i = matches.length; i-->0;) {
-    match = matches[i];
     text.splitText(match.index);
     text.nextSibling.splitText(match[0].length);
     text.parentNode.replaceChild(replace(match), text.nextSibling);
@@ -85,10 +80,11 @@ function handlePageChanges(summaries){
         SCRIPT: true,
         NOSCRIPT: true, 
         CDATA: true,
-        '#comment': true
+        '#comment': true,
+        TEXTAREA: true
     };
   pageSummary.added.forEach(function(node) {
-    if (!ignore[node.nodeName] || (node.parentNode && !ignore[node.parentNode.nodeName]) && node.nodeValue.trim()) {
+    if (!ignore[node.nodeName] || (node.parentNode && !ignore[node.parentNode.nodeName] && typeof node.parentNode !== 'undefined') && node.nodeValue.trim()) {
       replaceInElement(node.parentNode, find, callbackReplace);
     }
   });
