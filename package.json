@@ -5,7 +5,7 @@
   "description": "Allow you to click on any phonenumber contained in a web page to launch a call using your Voxity telephony system.",
   "author": "Maël Lavault",
   "license": "GPLv3",
-  "version": "1.1",
+  "version": "1.2",
   "preferences": [
     {
       "name": "token",
