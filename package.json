@@ -4,8 +4,11 @@
   "id": "jid1-hto47hFP5UfU6Q",
   "description": "Allow you to click on any phonenumber contained in a web page to launch a call using your Voxity telephony system.",
   "author": "Maël Lavault",
+  "contributors": "Loïc Chabert",
+  "homepage": "https://www.voxity.fr",
+
   "license": "GPLv3",
-  "version": "1.2",
+  "version": "1.3",
   "preferences": [
     {
       "name": "token",
