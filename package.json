@@ -8,7 +8,7 @@
   "homepage": "https://www.voxity.fr",
   "main":"lib/main.js",
   "license": "GPLv3",
-  "version": "1.3.0",
+  "version": "1.5.0",
   "preferences": [
     {
       "name": "token",
