@@ -17,5 +17,9 @@
       "value": "",
       "hidden": true
     }
-	]
+	],
+  "dependencies":["lib/websocket.js"],
+  "desktop-notification": {
+    "description": "Needed for creating system notifications."
+  }
 }
