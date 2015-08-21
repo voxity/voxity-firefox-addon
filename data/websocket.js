@@ -3,9 +3,10 @@ var is_second_try = false;
 self.port.emit('getToken', {});
 
 self.port.on('getToken', function(data){
-	// console.log('Received token');
+	console.log('Received token');
 	var access_token = data.token;
-	var socket = io.connect('http://localhost:3000/', {
+	var socket = io.connect(data.base_url, {
+			path: '/event/v1',
 	        query:"access_token="+access_token
 	});
 
@@ -20,23 +21,23 @@ self.port.on('getToken', function(data){
 	})
 
 	socket.on('calls.ringing', function(data){
-	    // console.log('RINGING', data);
+	    console.log('RINGING', data);
 	    if (data.calleridname !== 'Click-to-call')
 	        notify('ringing', data);
 	})
 
 	socket.on('calls.ring', function(data){
-	    // console.log('HANGUP', data);
+	    console.log('HANGUP', data);
 	    notify('ring', data);
 	})
 
 	socket.on('calls.bridged', function(data){
-	    // console.log('BRIDGED', data);
+	    console.log('BRIDGED', data);
 	    notify('bridged', data);
 	})
 
 	socket.on('calls.hangup', function(data){
-	    // console.log('HANGUP', data);
+	    console.log('HANGUP', data);
 	    notify('hangup', data);
 	})
 });
