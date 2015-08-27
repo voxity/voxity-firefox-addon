@@ -2,7 +2,7 @@ var is_second_try = false;
 
 self.port.emit('getToken', {});
 
-self.port.on('getToken', function(data){
+self.port.on('setToken', function(data){
 	// console.log('Received token');
 	var access_token = data.token;
 	var socket = io.connect(data.base_url, {
